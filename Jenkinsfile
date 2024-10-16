@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('NPM Install') {
             steps {
@@ -20,6 +19,16 @@ pipeline {
                         bat 'npm test'
                     }
                 }
+            }
+        }
+        stage('Deploy to Staging') {
+            steps {
+                echo 'Deploy to Staging'
+            }
+        }
+        stage('Deploy to Production') {
+            steps {
+                echo 'Deploy to Production'
             }
         }
     }
